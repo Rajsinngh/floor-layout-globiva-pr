@@ -1,0 +1,1024 @@
+
+
+html, body {
+  
+  background: #f7f7f7;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#msg {
+  position: absolute;  
+  left: 40px;
+  top: 0;
+  font-size: 1.5em;
+}
+
+#plan {
+  margin: 25px 35%;
+  width: 400px;
+}
+
+.room {
+  position: relative;
+  border: black 5px solid; 
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.room:before {         /* window */
+  content: "";
+  position: absolute;
+}
+
+.room:after {           /* door */
+  content: "";
+  position: absolute;
+}
+
+.roomName {
+  margin-left: auto;
+	margin-right: auto;
+  font-weight: bold; 
+  font-size: 1.2em;
+  color: #1658f4;
+}
+
+.start {
+  position: relative;
+  top: 1003px;
+  left: -540px;
+	width: 0; 
+	height: 0; 
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid #ad1A06;
+}
+
+/******************************************/
+/*  BULB                                  */
+/******************************************/
+.simple-bulb {
+  visibility: hidden;
+  position: absolute;
+  right: -10px;
+  top: 2px;
+  width: 50px;
+}
+
+.base {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 15px;
+  border-radius: 90px 90px 0 0;
+  -moz-border-radius: 90px 90px 0 0;
+  -webkit-border-radius: 90px 90px 0 0;
+  background: #424242;
+}
+
+.base:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -5px;
+  height: 5px;
+  width: 25px;
+  border-radius: 30px 30px 0 0;
+  -moz-border-radius: 30px 30px 0 0;
+  -webkit-border-radius: 30px 30px 0 0;
+  border-bottom: 2px solid #aaa;
+  background: #424242;
+}
+
+.base:after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: -5px;
+  height: 5px;
+  width: 25px;
+  border-bottom: 2px solid #aaa;
+  background: #424242;
+}
+
+.light {
+  position: relative;
+  top: 14px;
+  left: -5px;
+  height: 5px;
+  width: 25px;
+  background: #f9f981;
+}
+
+.light:after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: -7px;
+  height: 30px;
+  width: 40px;
+  border-radius: 35px 35px 50px 50px;
+  -moz-border-radius: 35px 35px 50px 50px;
+  -webkit-border-radius: 35px 35px 50px 50px; 
+  background: #f9f981;
+}
+
+.light:before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 8px;
+  width: 8px;
+  border-radius: 90px 40px 90px 40px;
+  -moz-border-radius: 90px 40px 90px 40px;
+  -webkit-border-radius: 90px 40px 90px 40px; 
+  background: #fcffc1;
+  z-index: 1;
+}
+
+/******************************************/
+/*  ROOMS                                 */
+/******************************************/
+
+/*home*/
+div[class^="room"]:nth-child(2) {
+
+  top: 950px;
+  width: 100px;
+  height: 77px;
+  border-left-color: transparent;  
+  border-right-color: transparent; 
+  left: -520px;
+}
+
+/* Front door (first half)*/
+div[class^="room"]:nth-child(2):before {  
+  left: -2px;
+  bottom: -2px;
+  height: 33px;
+  width: 25px;
+  border-width: 3px 2px 2px 2px;
+  border-style: double solid solid solid;
+  border-color: black black black transparent;
+  border-radius: 0 0 27px 0;
+  -moz-border-radius: 0 0 27px 0;
+  -webkit-border-radius: 0 0 27px 0;
+}  
+
+/* Front door (first half)*/
+div[class^="room"]:nth-child(2):after {
+  top: -2px;
+  left: -2px;
+  height: 33px;
+  width: 25px;
+  border-width: 2px 2px 3px 2px;
+  border-style: solid solid double solid;
+  border-color: black black black transparent;
+  border-radius: 0 27px 0  0;
+}
+
+/*reception*/
+
+div[class^="room"]:nth-child(3) {
+  left: -415px;
+  top: 796px;
+  width: 240px;
+  height: 130px;
+  border-top: transparent;
+  
+  line-height: 170px;  /* FIXME: center text */
+  border-right: transparent;
+  
+}
+ /*window
+div[class^="room"]:nth-child(3):before {
+  top: -4px;
+  left: 45%;
+  width: 60px;
+  border-top: 2px solid #fff; 
+}
+*/
+
+
+div[class^="room"]:nth-child(3):after {
+    right: -5px;
+    bottom: 10%;
+    height: 30px;
+    width: 30px;
+    left: -37px;
+    border-width: 2px 5px 3px 2px;
+    border-style: solid solid double solid;
+    border-color: black #f7f7f7 black black;
+    border-radius: 32px 0 0 0;
+    -moz-border-radius: 32px 0 0 0;
+    -webkit-border-radius: 32px 0 0 0;
+} 
+
+/*waiting room*/
+
+div[class^="room"]:nth-child(4) {
+  left: -415px;
+  top: 515px;
+  width: 237px; 
+  height: 190px; 
+  line-height: 100px;  
+}
+
+div[class^="room"]:nth-child(4):before {
+  top: 30px;
+  left: -4px;
+  height: 60px;
+  border: 1px solid #fff; 
+}
+
+div[class^="room"]:nth-child(4):after {
+  right: -5px;
+  bottom: 10%;
+  height: 30px;
+  width: 30px;
+  border-width: 2px 5px 3px 2px;
+  border-style: solid solid double solid;
+  border-color: black #f7f7f7 black black;
+  border-radius: 32px 0 0 0;
+  -moz-border-radius: 32px 0 0 0;
+  -webkit-border-radius: 32px 0 0 0;
+}
+
+/*office1*/
+
+div[class^="room"]:nth-child(5) {
+  left: -415px;
+  top: 170px;
+  width: 237px; 
+  height: 140px; 
+  line-height: 100px;  
+}
+
+div[class^="room"]:nth-child(5):before {
+  top: 30px;
+  left: -4px;
+  height: 60px;
+  border: 1px solid #fff; 
+}
+
+div[class^="room"]:nth-child(5):after {
+  right: -5px;
+  bottom: 10%;
+  height: 30px;
+  width: 30px;
+  border-width: 2px 5px 3px 2px;
+  border-style: solid solid double solid;
+  border-color: black #f7f7f7 black black;
+  border-radius: 32px 0 0 0;
+  -moz-border-radius: 32px 0 0 0;
+  -webkit-border-radius: 32px 0 0 0;
+}
+
+/*office-2*/
+
+div[class^="room"]:nth-child(6) {
+    left: -415px;
+    top: -125px;
+    width: 237px; 
+    height: 140px; 
+    line-height: 100px;  
+  }
+  
+  div[class^="room"]:nth-child(6):before {
+    top: 30px;
+    left: -4px;
+    height: 60px;
+    border: 1px solid #fff; 
+  }
+  
+  div[class^="room"]:nth-child(6):after {
+    right: -5px;
+    bottom: 10%;
+    height: 30px;
+    width: 30px;
+    border-width: 2px 5px 3px 2px;
+    border-style: solid solid double solid;
+    border-color: black #f7f7f7 black black;
+    border-radius: 32px 0 0 0;
+    -moz-border-radius: 32px 0 0 0;
+    -webkit-border-radius: 32px 0 0 0;
+  }
+
+  /*office-3*/
+
+  div[class^="room"]:nth-child(7) {
+    left: -415px;
+    top: -420px;
+    width: 237px; 
+    height: 140px; 
+    line-height: 100px;  
+  }
+  
+  div[class^="room"]:nth-child(7):before {
+    top: 30px;
+    left: -4px;
+    height: 60px;
+    border: 1px solid #fff; 
+  }
+  
+  div[class^="room"]:nth-child(7):after {
+    right: -5px;
+    bottom: 10%;
+    height: 30px;
+    width: 30px;
+    border-width: 2px 5px 3px 2px;
+    border-style: solid solid double solid;
+    border-color: black #f7f7f7 black black;
+    border-radius: 32px 0 0 0;
+    -moz-border-radius: 32px 0 0 0;
+    -webkit-border-radius: 32px 0 0 0;
+  }
+/*office-4*/
+
+  div[class^="room"]:nth-child(8) {
+    left: -415px;
+    top: -825px;
+    width: 237px; 
+    height: 250px; 
+    line-height: 100px;  
+  }
+  
+  div[class^="room"]:nth-child(8):before {
+    top: 30px;
+    left: -4px;
+    height: 60px;
+    border: 1px solid #fff; 
+  }
+  
+  div[class^="room"]:nth-child(8):after {
+    right: -5px;
+    bottom: 10%;
+    height: 30px;
+    width: 30px;
+    border-width: 2px 5px 3px 2px;
+    border-style: solid solid double solid;
+    border-color: black #f7f7f7 black black;
+    border-radius: 32px 0 0 0;
+    -moz-border-radius: 32px 0 0 0;
+    -webkit-border-radius: 32px 0 0 0;
+  }
+
+
+  /*office-5*/
+
+  div[class^="room"]:nth-child(9) {
+    left: -170px;
+    top: -1085px;
+    width: 210px; 
+    height: 150px; 
+    line-height: 100px;
+    border-left: transparent;  
+  }
+  
+  
+  div[class^="room"]:nth-child(9):after {
+    left: 167px;
+  bottom: -5px;
+  height: 30px;
+  width: 30px;
+  border-width: 2px 2px 6px 3px;
+  border-style: solid solid solid double;
+  border-color: black black #f7f7f7 black;
+  border-radius: 0 32px 0 0;
+  -moz-border-radius: 0 32px 0 0;
+  -webkit-border-radius: 0 32px 0 0;
+  }
+
+  /*office-6*/
+
+  div[class^="room"]:nth-child(10) {
+    left: 45px;
+    top: -1245px;
+    width: 200px; 
+    height: 150px; 
+    line-height: 100px;
+    border-left: transparent;  
+  }
+  
+  
+  div[class^="room"]:nth-child(10):after {
+    left: 155px;
+  bottom: -5px;
+  height: 30px;
+  width: 30px;
+  border-width: 2px 2px 6px 3px;
+  border-style: solid solid solid double;
+  border-color: black black #f7f7f7 black;
+  border-radius: 0 32px 0 0;
+  -moz-border-radius: 0 32px 0 0;
+  -webkit-border-radius: 0 32px 0 0;
+  }
+
+  /*store-1*/
+
+  div[class^="room"]:nth-child(11) {
+    left: 250px;
+    top: -1405px;
+    width: 117px; 
+    height: 150px; 
+    line-height: 100px;
+    border-left: transparent;  
+  }
+  
+  
+  div[class^="room"]:nth-child(11):after {
+    left: 75px;
+  bottom: -5px;
+  height: 30px;
+  width: 30px;
+  border-width: 2px 2px 6px 3px;
+  border-style: solid solid solid double;
+  border-color: black black #f7f7f7 black;
+  border-radius: 0 32px 0 0;
+  -moz-border-radius: 0 32px 0 0;
+  -webkit-border-radius: 0 32px 0 0;
+  }
+
+  /*store-2*/
+
+  div[class^="room"]:nth-child(12) {
+    left: 370px;
+    top: -1565px;
+    width: 117px; 
+    height: 150px; 
+    line-height: 100px;
+    border-left: transparent;  
+  }
+  
+  
+  div[class^="room"]:nth-child(12):after {
+    left: 75px;
+  bottom: -5px;
+  height: 30px;
+  width: 30px;
+  border-width: 2px 2px 6px 3px;
+  border-style: solid solid solid double;
+  border-color: black black #f7f7f7 black;
+  border-radius: 0 32px 0 0;
+  -moz-border-radius: 0 32px 0 0;
+  -webkit-border-radius: 0 32px 0 0;
+  }
+
+  /*office-7*/
+
+  div[class^="room"]:nth-child(13) {
+    left: 492px;
+    top: -1725px;
+    width: 215px; 
+    height: 150px; 
+    line-height: 100px;
+    border-left: transparent;  
+  }
+  
+  
+  div[class^="room"]:nth-child(13):after {
+    left: 170px;
+  bottom: -5px;
+  height: 30px;
+  width: 30px;
+  border-width: 2px 2px 6px 3px;
+  border-style: solid solid solid double;
+  border-color: black black #f7f7f7 black;
+  border-radius: 0 32px 0 0;
+  -moz-border-radius: 0 32px 0 0;
+  -webkit-border-radius: 0 32px 0 0;
+  }
+
+  /*office-8*/
+
+  div[class^="room"]:nth-child(14) {
+    left: 712px;
+    top: -1885px;
+    width: 290px; 
+    height: 150px; 
+    line-height: 100px;
+    border-left: transparent;  
+  }
+  
+  
+  div[class^="room"]:nth-child(14):after {
+    left: 235px;
+  bottom: -5px;
+  height: 30px;
+  width: 30px;
+  border-width: 2px 2px 6px 3px;
+  border-style: solid solid solid double;
+  border-color: black black #f7f7f7 black;
+  border-radius: 0 32px 0 0;
+  -moz-border-radius: 0 32px 0 0;
+  -webkit-border-radius: 0 32px 0 0;
+  }
+
+  /*hub-room*/
+
+  div[class^="room"]:nth-child(15) {
+    left: 1007px;
+    top: -2045px;
+    width: 215px; 
+    height: 150px; 
+    line-height: 100px;
+    border-left: transparent;  
+  }
+  
+  
+  div[class^="room"]:nth-child(15):after {
+    left: 170px;
+  bottom: -5px;
+  height: 30px;
+  width: 30px;
+  border-width: 2px 2px 6px 3px;
+  border-style: solid solid solid double;
+  border-color: black black #f7f7f7 black;
+  border-radius: 0 32px 0 0;
+  -moz-border-radius: 0 32px 0 0;
+  -webkit-border-radius: 0 32px 0 0;
+  }
+
+  /*office-9*/
+
+  div[class^="room"]:nth-child(16) {
+    left: 1227px;
+    top: -2205px;
+    width: 215px; 
+    height: 150px; 
+    line-height: 100px;
+    border-left: transparent;  
+  }
+  
+  
+  div[class^="room"]:nth-child(16):after {
+    left: 168px;
+  bottom: -5px;
+  height: 30px;
+  width: 30px;
+  border-width: 2px 2px 6px 3px;
+  border-style: solid solid solid double;
+  border-color: black black #f7f7f7 black;
+  border-radius: 0 32px 0 0;
+  -moz-border-radius: 0 32px 0 0;
+  -webkit-border-radius: 0 32px 0 0;
+  }
+
+  /*office-10*/
+
+  div[class^="room"]:nth-child(17) {
+    left: 1447px;
+    top: -2365px;
+    width: 290px; 
+    height: 150px; 
+    line-height: 100px;
+    border-left: transparent;  
+  }
+  
+
+  
+  div[class^="room"]:nth-child(17):after {
+    left: 235px;
+  bottom: -5px;
+  height: 30px;
+  width: 30px;
+  border-width: 2px 2px 6px 3px;
+  border-style: solid solid solid double;
+  border-color: black black #f7f7f7 black;
+  border-radius: 0 32px 0 0;
+  -moz-border-radius: 0 32px 0 0;
+  -webkit-border-radius: 0 32px 0 0;
+  }
+
+  /*office-11*/
+
+  div[class^="room"]:nth-child(18) {
+    left: 1742px;
+    top: -2525px;
+    width: 215px; 
+    height: 150px; 
+    line-height: 100px;
+    border-left: transparent;  
+  }
+  
+  
+  div[class^="room"]:nth-child(18):after {
+    left: 168px;
+  bottom: -5px;
+  height: 30px;
+  width: 30px;
+  border-width: 2px 2px 6px 3px;
+  border-style: solid solid solid double;
+  border-color: black black #f7f7f7 black;
+  border-radius: 0 32px 0 0;
+  -moz-border-radius: 0 32px 0 0;
+  -webkit-border-radius: 0 32px 0 0;
+  }
+
+  /*waiting-room2*/
+  div[class^="room"]:nth-child(19) {
+    left: 1859px;
+    top: -2685px;
+    width: 200px; 
+    height: 250px; 
+    line-height: 70px;
+    border-left: transparent;  
+  }
+  
+
+  /*office-12*/
+
+  div[class^="room"]:nth-child(20) {
+    left: 1859px;
+    top: -2704px;
+    width: 195px; 
+    height: 375px; 
+    line-height: 100px;  
+    border-top: transparent;
+  }
+  
+  
+  div[class^="room"]:nth-child(20):after {
+    right: 195px;
+    bottom: -1%;
+    height: 30px;
+    width: 30px;
+    border-width: 2px 5px 3px 2px;
+    border-style: solid solid double solid;
+    border-color: black #f7f7f7 black black;
+    border-radius: 32px 0 0 0;
+    -moz-border-radius: 32px 0 0 0;
+    -webkit-border-radius: 32px 0 0 0;
+  }
+  
+  /*store-3*/
+
+  div[class^="room"]:nth-child(21) {
+    left: 1859px;
+    top: -2723px;
+    width: 195px; 
+    height: 75px; 
+    line-height: 100px;
+    border-top: transparent;
+     
+  }
+  
+  
+  div[class^="room"]:nth-child(21):after {
+    right: 195px;
+    bottom: -1%;
+    height: 30px;
+    width: 30px;
+    border-width: 2px 5px 3px 2px;
+    border-style: solid solid double solid;
+    border-color: black #f7f7f7 black black;
+    border-radius: 32px 0 0 0;
+    -moz-border-radius: 32px 0 0 0;
+    -webkit-border-radius: 32px 0 0 0;
+  }
+
+  /*store-4*/
+
+  div[class^="room"]:nth-child(22) {
+    left: 1859px;
+    top: -2743px;
+    width: 195px; 
+    height: 75px; 
+    line-height: 100px;
+    border-top: transparent;
+     
+  }
+  
+  
+  div[class^="room"]:nth-child(22):after {
+    right: 195px;
+    bottom: -1%;
+    height: 30px;
+    width: 30px;
+    border-width: 2px 5px 3px 2px;
+    border-style: solid solid double solid;
+    border-color: black #f7f7f7 black black;
+    border-radius: 32px 0 0 0;
+    -moz-border-radius: 32px 0 0 0;
+    -webkit-border-radius: 32px 0 0 0;
+  }
+
+  /*multi purpose room*/
+
+  div[class^="room"]:nth-child(23) {
+    left: 1859px;
+    top: -2762px;
+    width: 195px; 
+    height: 165px; 
+    line-height: 100px;
+    border-top: transparent;
+    border-bottom: transparent;
+     
+  }
+  
+  
+  div[class^="room"]:nth-child(23):after {
+    right: 195px;
+    bottom: -1%;
+    height: 30px;
+    width: 34px;
+    border-width: 2px 5px 3px 2px;
+    border-style: solid solid double solid;
+    border-color: black #f7f7f7 black black;
+    border-radius: 32px 0 0 0;
+    -moz-border-radius: 32px 0 0 0;
+    -webkit-border-radius: 32px 0 0 0;
+  }
+
+  /*a-1*/
+
+  div[class^="room"]:nth-child(24) {
+    left: -95px;
+    top: -3525px;
+    width: 340px; 
+    height: 115px; 
+    line-height: 100px;  
+  }
+
+  /*a-2*/
+  div[class^="room"]:nth-child(25) {
+    left: 335px;
+    top: -3650px;
+    width: 450px; 
+    height: 115px; 
+    line-height: 100px;  
+  }
+
+  /*a-3*/
+
+  div[class^="room"]:nth-child(26) {
+    left: 880px;
+    top: -3777px;
+    width: 450px; 
+    height: 115px; 
+    line-height: 100px;  
+  }
+
+  /*a-4*/
+
+  div[class^="room"]:nth-child(27) {
+    left: 1425px;
+    top: -3901px;
+    width: 340px; 
+    height: 115px; 
+    line-height: 100px;  
+  }
+
+  /*b-1*/
+
+  div[class^="room"]:nth-child(28) {
+    left: -95px;
+    top: -3875px;
+    width: 340px; 
+    height: 115px; 
+    line-height: 100px;  
+  }
+
+  /*b-2*/
+
+  div[class^="room"]:nth-child(29) {
+    left: 335px;
+    top: -4000px;
+    width: 450px; 
+    height: 115px; 
+    line-height: 100px;  
+  }
+
+  /*b-3*/
+
+  div[class^="room"]:nth-child(30) {
+    left: 880px;
+    top: -4125px;
+    width: 450px; 
+    height: 115px; 
+    line-height: 100px;  
+  }
+
+  /*b-4*/
+
+  div[class^="room"]:nth-child(31) {
+    left: 1425px;
+    top: -4250px;
+    width: 340px; 
+    height: 115px; 
+    line-height: 100px;  
+  }
+
+  /*c-1*/
+
+  div[class^="room"]:nth-child(32) {
+    left: -95px;
+    top: -4225px;
+    width: 340px; 
+    height: 115px; 
+    line-height: 100px;  
+  }
+
+  /*c-2*/
+
+  div[class^="room"]:nth-child(33) {
+    left: 335px;
+    top: -4349px;
+    width: 450px; 
+    height: 115px; 
+    line-height: 100px;  
+  }
+
+  /*c-3*/
+
+  div[class^="room"]:nth-child(34) {
+    left: 880px;
+    top: -4474px;
+    width: 450px; 
+    height: 115px; 
+    line-height: 100px;  
+  }
+
+  /*c-4*/
+
+  div[class^="room"]:nth-child(35) {
+    left: 1425px;
+    top: -4598px;
+    width: 340px; 
+    height: 115px; 
+    line-height: 100px;  
+  }
+
+  /*d-1*/
+
+  div[class^="room"]:nth-child(36) {
+    left: -95px;
+    top: -4576px;
+    width: 340px; 
+    height: 115px; 
+    line-height: 100px;  
+  }
+
+  /*d-2*/
+
+  div[class^="room"]:nth-child(37) {
+    left: 335px;
+    top: -4700px;
+    width: 450px; 
+    height: 115px; 
+    line-height: 100px;  
+  }
+
+  /*d-3*/
+
+  div[class^="room"]:nth-child(38) {
+    left: 880px;
+    top: -4824px;
+    width: 450px; 
+    height: 115px; 
+    line-height: 100px;  
+  }
+
+  /*d-4*/
+
+  div[class^="room"]:nth-child(39) {
+    left: 1425px;
+    top: -4949px;
+    width: 340px; 
+    height: 115px; 
+    line-height: 100px;  
+  }
+
+  /*e-1*/
+
+  div[class^="room"]:nth-child(40) {
+    left: -96px;
+    top: -4930px;
+    width: 113px; 
+    height: 105px; 
+    line-height: 100px;
+    
+  }
+
+  div[class^="room"]:nth-child(40):after {
+    right: 76px;
+    bottom: 70%;
+    height: 30px;
+    width: 30px;
+    rotate: 270deg;
+    border-width: 2px 5px 3px 2px;
+    border-style: solid solid double solid;
+    border-color: black #f7f7f7 black black;
+    border-radius: 32px 0 0 0;
+    -moz-border-radius: 32px 0 0 0;
+    -webkit-border-radius: 32px 0 0 0;
+  }
+
+  /*e-2*/
+
+  div[class^="room"]:nth-child(41) {
+    left: 26px;
+    top: -5045px;
+    width: 113px; 
+    height: 105px; 
+    line-height: 100px;
+    border-left: transparent;
+    
+  }
+
+  div[class^="room"]:nth-child(41):after {
+    right: 75px;
+    bottom: 70%;
+    height: 30px;
+    width: 30px;
+    rotate: 270deg;
+    border-width: 2px 5px 3px 2px;
+    border-style: solid solid double solid;
+    border-color: black #f7f7f7 black black;
+    border-radius: 32px 0 0 0;
+    -moz-border-radius: 32px 0 0 0;
+    -webkit-border-radius: 32px 0 0 0;
+  }
+
+  /*e-3*/
+
+  div[class^="room"]:nth-child(42) {
+    left: 137px;
+    top: -5160px;
+    width: 113px; 
+    height: 105px; 
+    line-height: 100px;
+    border-left: transparent;
+    
+  }
+
+  div[class^="room"]:nth-child(42):after {
+    right: 67px;
+    bottom: 70%;
+    height: 30px;
+    width: 30px;
+    rotate: 270deg;
+    border-width: 2px 5px 3px 2px;
+    border-style: solid solid double solid;
+    border-color: black #f7f7f7 black black;
+    border-radius: 32px 0 0 0;
+    -moz-border-radius: 32px 0 0 0;
+    -webkit-border-radius: 32px 0 0 0;
+  }
+
+  
+
+  /*e-4*/
+
+  div[class^="room"]:nth-child(43) {
+    left: 335px;
+    top: -5274px;
+    width: 450px; 
+    height: 105px; 
+    line-height: 100px;  
+  }
+
+  /*e-5*/
+
+  div[class^="room"]:nth-child(44) {
+    left: 880px;
+    top: -5388px;
+    width: 450px; 
+    height: 105px; 
+    line-height: 100px;  
+  }
+
+  /*e-6*/
+
+  div[class^="room"]:nth-child(45) {
+    left: 1425px;
+    top: -5503px;
+    width: 340px; 
+    height: 105px; 
+    line-height: 100px;  
+  }
+
+
+
+div[class^="room"]:nth-child(46) {
+  left: -190px;
+  top: -5683px;
+  width: 2249px; 
+  height: 213px; 
+  line-height: 190px;  
+  border-top: transparent;
+  border-left: transparent;
+}
+
+div[class^="room"]:nth-child(46):before {
+  top: 130px;
+  right: -4px;
+  height: 60px;
+  border: 1px solid #fff; 
+}
